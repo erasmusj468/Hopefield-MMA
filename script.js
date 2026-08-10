@@ -1,9 +1,10 @@
 const fighterGrid = document.getElementById("fighterGrid");
 
 function fighterCard(f) {
+  const imageStyle = `style="object-position:${f.image_position || "center center"}; transform:scale(${f.image_scale || 1});"`;
+
   const image = f.image
-    ? `<img src="${f.image}" alt="${f.name} — Hopefield MMA"
-         style="object-position:${f.image_position || "center center"}; --fighter-scale:${f.image_scale || 1};">`
+    ? `<img src="${f.image}" alt="${f.name} — Hopefield MMA" ${imageStyle}>`
     : `<div class="no-photo" aria-label="Photo to be added">${f.name.split(" ").map(x=>x[0]).join("").slice(0,2)}</div>`;
 
   const chips = [

@@ -35,3 +35,8 @@ WEBSITE PHOTO CROPPING
 The original images are NOT edited.
 Fighter photos are cropped only by CSS using object-fit: cover.
 To adjust a fighter's crop, edit image_position and image_scale in data.js.
+
+
+LATEST CROPPING TWEAKS
+- Seryn Armstrong card crop is focused tightly on her, cropping Damien out as much as possible.
+- The silver medal image is shifted slightly downward in the website display so the top of the medal shows better.

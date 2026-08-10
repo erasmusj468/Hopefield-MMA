@@ -1,8 +1,9 @@
 /*
   HOPEFIELD MMA — EASY EDIT DATA FILE
 
-  The image_position and image_scale values only change how photos are CROPPED
-  inside the website cards. The original image files are not edited.
+  Edit fighter details here instead of hunting through index.html.
+  Unknown weight classes, records and social links are intentionally left blank.
+  Add them only when confirmed.
 */
 
 const FIGHTERS = [
@@ -11,8 +12,8 @@ const FIGHTERS = [
     name: "Jonathan Erasmus",
     status: "Current competitor",
     image: "assets/jonathan.jpeg",
-    image_position: "center 18%",
-    image_scale: 1.12,
+    image_position: "center 24%",
+    image_scale: 1.18,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
@@ -24,8 +25,8 @@ const FIGHTERS = [
     name: "Damien Erasmus",
     status: "Current competitor",
     image: "assets/damien.jpeg",
-    image_position: "center 16%",
-    image_scale: 1.12,
+    image_position: "center 18%",
+    image_scale: 1.18,
     weight_class: "Featherweight",
     mma_record: "",
     instagram_url: "",
@@ -50,8 +51,8 @@ const FIGHTERS = [
     name: "Burger Geldenhuys",
     status: "Former competitor",
     image: "assets/burger.jpeg",
-    image_position: "center 14%",
-    image_scale: 1.14,
+    image_position: "center 18%",
+    image_scale: 1.2,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
@@ -63,21 +64,21 @@ const FIGHTERS = [
     name: "Seryn Armstrong",
     status: "Former competitor",
     image: "assets/seryn.jpeg",
-    image_position: "center 18%",
-    image_scale: 1.10,
+    image_position: "82% 16%",
+    image_scale: 1.34,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
     achievement: "Previous Hopefield MMA competitor",
-    bio: "Former Hopefield MMA competitor."
+    bio: "Former Hopefield MMA competitor. Profile image shown with Damien Erasmus."
   },
   {
     id: "shamiel-sierbritz",
     name: "Shamiel Sierbritz",
     status: "Future competitor",
     image: "assets/samil.jpeg",
-    image_position: "center 15%",
-    image_scale: 1.08,
+    image_position: "center 18%",
+    image_scale: 1.1,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
@@ -89,8 +90,8 @@ const FIGHTERS = [
     name: "Juande Jansen",
     status: "Future competitor",
     image: "assets/juande.jpeg",
-    image_position: "center 16%",
-    image_scale: 1.08,
+    image_position: "center 18%",
+    image_scale: 1.1,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
