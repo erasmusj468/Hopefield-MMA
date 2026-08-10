@@ -36,7 +36,7 @@ const FIGHTERS = [
     id: "austin-armstrong",
     name: "Austin Armstrong",
     status: "Competitor",
-    image: "assets/austin.jpeg",
+    image: "austin.jpeg",
     image_position: "center 18%",
     image_scale: 1.06,
     weight_class: "Bantamweight",

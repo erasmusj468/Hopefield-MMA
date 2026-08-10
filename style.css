@@ -21,8 +21,8 @@ span{font:inherit}
 .nav-contact{border:1px solid var(--gold);padding:10px 15px}
 .menu-btn{display:none;background:none;border:0;width:38px}.menu-btn span{height:2px;background:white;display:block;margin:6px 0}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;padding-top:78px}
-.hero-photo{position:absolute;inset:0;background:#050505 url("assets/logo-background.jpeg") center center/contain no-repeat;filter:none;opacity:.28}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.96) 0%,rgba(8,8,8,.86) 42%,rgba(8,8,8,.60) 72%,rgba(8,8,8,.82) 100%)}
+.hero-photo{position:absolute;inset:0;background:#050505 url("logo-background.jpeg") 82% center/min(68vw,900px) auto no-repeat;filter:none;opacity:1}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.97) 30%,rgba(8,8,8,.82) 46%,rgba(8,8,8,.34) 66%,rgba(8,8,8,.08) 100%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:80px;padding:110px 0 150px}
 .kicker{font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--gold2);text-transform:uppercase;margin-bottom:16px}
 .hero h1{font-size:clamp(58px,8.5vw,112px);line-height:.86;letter-spacing:-.025em}
@@ -103,6 +103,8 @@ footer{background:#060606;border-top:1px solid #22201d;padding:30px 0;color:#777
   .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>a{text-align:left}
 }
 @media(max-width:620px){
+  .hero-photo{background-position:center 34%;background-size:92vw auto;opacity:.55}
+  .hero-shade{background:linear-gradient(180deg,rgba(8,8,8,.62),#080808 72%)}
   .fighter-image-wrap{height:315px}
   .container{width:min(var(--max),calc(100% - 26px))}
   .topbar,.nav{height:70px}.links{top:70px}.brand img{width:42px;height:42px}

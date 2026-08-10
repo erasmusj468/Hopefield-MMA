@@ -61,3 +61,9 @@ V7 UPDATE
 - Austin remains listed as an active Competitor.
 - Hero background changed to the supplied Hopefield MMA logo artwork.
 - Original uploaded images were not edited.
+
+
+V8 FIX
+- New 2D Hopefield MMA logo is visibly used as the hero background.
+- Austin Armstrong photo is stored at repository root as austin.jpeg and his card points directly to it.
+- Austin is listed as Bantamweight and Competitor.
