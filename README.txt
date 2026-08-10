@@ -41,3 +41,9 @@ REPAIR BUILD
 - Restored a valid non-empty index.html.
 - Seryn crop focuses on her in the website card.
 - Silver Nationals medal is positioned lower in its website frame.
+
+V5 SERYN CARD ADJUSTMENT
+- Seryn Armstrong's profile card now uses the four-fighter event photo.
+- The website crop focuses on the far-right side of that photo so Seryn is the subject.
+- The crop is slightly more zoomed out to keep her face visible.
+- Original image files are unchanged.
