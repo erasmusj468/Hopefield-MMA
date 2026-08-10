@@ -29,3 +29,9 @@ Austin Armstrong currently has no supplied profile photo.
 GITHUB + VERCEL
 Upload/replace these files in the same GitHub repository and commit.
 If Vercel is connected to the repository, it should automatically deploy the new commit.
+
+
+WEBSITE PHOTO CROPPING
+The original images are NOT edited.
+Fighter photos are cropped only by CSS using object-fit: cover.
+To adjust a fighter's crop, edit image_position and image_scale in data.js.

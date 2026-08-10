@@ -2,7 +2,8 @@ const fighterGrid = document.getElementById("fighterGrid");
 
 function fighterCard(f) {
   const image = f.image
-    ? `<img src="${f.image}" alt="${f.name} — Hopefield MMA">`
+    ? `<img src="${f.image}" alt="${f.name} — Hopefield MMA"
+         style="object-position:${f.image_position || "center center"}; --fighter-scale:${f.image_scale || 1};">`
     : `<div class="no-photo" aria-label="Photo to be added">${f.name.split(" ").map(x=>x[0]).join("").slice(0,2)}</div>`;
 
   const chips = [
