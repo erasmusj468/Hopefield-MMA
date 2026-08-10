@@ -47,3 +47,17 @@ V5 SERYN CARD ADJUSTMENT
 - The website crop focuses on the far-right side of that photo so Seryn is the subject.
 - The crop is slightly more zoomed out to keep her face visible.
 - Original image files are unchanged.
+
+
+V6 FIGHTER DETAILS
+- Jonathan Erasmus weight class set to Featherweight.
+- Austin Armstrong listed simply as Competitor.
+- Austin placeholder wording removed; his photo can be added later.
+
+
+V7 UPDATE
+- Austin Armstrong photo added.
+- Austin Armstrong weight class: Bantamweight.
+- Austin remains listed as an active Competitor.
+- Hero background changed to the supplied Hopefield MMA logo artwork.
+- Original uploaded images were not edited.

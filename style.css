@@ -21,8 +21,8 @@ span{font:inherit}
 .nav-contact{border:1px solid var(--gold);padding:10px 15px}
 .menu-btn{display:none;background:none;border:0;width:38px}.menu-btn span{height:2px;background:white;display:block;margin:6px 0}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;padding-top:78px}
-.hero-photo{position:absolute;inset:0;background:url("assets/fight-action.jpeg") center 35%/cover no-repeat;filter:grayscale(100%) contrast(1.05);opacity:.30}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.93) 42%,rgba(8,8,8,.65) 72%,rgba(8,8,8,.85) 100%)}
+.hero-photo{position:absolute;inset:0;background:#050505 url("assets/logo-background.jpeg") center center/contain no-repeat;filter:none;opacity:.28}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.96) 0%,rgba(8,8,8,.86) 42%,rgba(8,8,8,.60) 72%,rgba(8,8,8,.82) 100%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:80px;padding:110px 0 150px}
 .kicker{font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--gold2);text-transform:uppercase;margin-bottom:16px}
 .hero h1{font-size:clamp(58px,8.5vw,112px);line-height:.86;letter-spacing:-.025em}

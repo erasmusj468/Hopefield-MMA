@@ -13,7 +13,7 @@ const FIGHTERS = [
     image: "assets/jonathan.jpeg",
     image_position: "center 18%",
     image_scale: 1.12,
-    weight_class: "",
+    weight_class: "Featherweight",
     mma_record: "",
     instagram_url: "",
     achievement: "3rd Place — 2025 SA MMA Nationals",
@@ -35,15 +35,15 @@ const FIGHTERS = [
   {
     id: "austin-armstrong",
     name: "Austin Armstrong",
-    status: "Current competitor",
-    image: "",
-    image_position: "center center",
-    image_scale: 1,
-    weight_class: "",
+    status: "Competitor",
+    image: "assets/austin.jpeg",
+    image_position: "center 18%",
+    image_scale: 1.06,
+    weight_class: "Bantamweight",
     mma_record: "",
     instagram_url: "",
-    achievement: "Competition experience",
-    bio: "Hopefield MMA competitor. Add confirmed event results and a profile photo here."
+    achievement: "Hopefield MMA competitor",
+    bio: "Hopefield MMA competitor."
   },
   {
     id: "burger-geldenhuys",
