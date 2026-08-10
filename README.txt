@@ -80,3 +80,9 @@ V12 IMPORTANT FIX
 - Fixed invalid JavaScript quotation marks in Jonathan and Damiën nicknames/bios.
 - Hero wording and all section wording now remain visible even if fighter data has a future error.
 - Fighter data loading is now guarded so one broken entry does not blank the website.
+
+
+V13 DAMIEN PHOTO FIX
+- Replaced assets/damien.jpeg with the newly uploaded Damien photo.
+- Added damien.jpeg at repository root as a backup copy.
+- data.js continues to reference assets/damien.jpeg.
