@@ -67,3 +67,11 @@ V8 FIX
 - New 2D Hopefield MMA logo is visibly used as the hero background.
 - Austin Armstrong photo is stored at repository root as austin.jpeg and his card points directly to it.
 - Austin is listed as Bantamweight and Competitor.
+
+
+V11 FINAL UPDATE
+- Replaced Damien Erasmus card photo with the newly uploaded image.
+- Added Jonathan and Damiën Instagram profile links.
+- Updated Jonathan and Damiën fighter bios and records.
+- Added Austin Armstrong record: 0-2-0.
+- Kept the softer faded hero background style.
