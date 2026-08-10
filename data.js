@@ -23,7 +23,7 @@ const FIGHTERS = [
     id: "damien-erasmus",
     name: 'Damiën "The Italian Stallion" Erasmus',
     status: "Competitor",
-    image: "assets/damien.jpeg",
+    image: "damien-final.jpeg",
     image_position: "center 14%",
     image_scale: 1.08,
     weight_class: "Featherweight",
