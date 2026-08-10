@@ -32,7 +32,7 @@ function fighterCard(f) {
   `;
 }
 
-if (fighterGrid && Array.isArray(FIGHTERS)) {
+if (fighterGrid && typeof FIGHTERS !== "undefined" && Array.isArray(FIGHTERS)) {
   fighterGrid.innerHTML = FIGHTERS.map(fighterCard).join("");
 }
 

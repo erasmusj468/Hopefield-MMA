@@ -75,3 +75,8 @@ V11 FINAL UPDATE
 - Updated Jonathan and Damiën fighter bios and records.
 - Added Austin Armstrong record: 0-2-0.
 - Kept the softer faded hero background style.
+
+V12 IMPORTANT FIX
+- Fixed invalid JavaScript quotation marks in Jonathan and Damiën nicknames/bios.
+- Hero wording and all section wording now remain visible even if fighter data has a future error.
+- Fighter data loading is now guarded so one broken entry does not blank the website.

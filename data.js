@@ -1,14 +1,14 @@
 /*
   HOPEFIELD MMA — EASY EDIT DATA FILE
 
-  The image_position and image_scale values only change how photos are CROPPED
-  inside the website cards. The original image files are not edited.
+  Edit fighter details here.
+  image_position and image_scale only affect cropping on the website.
 */
 
 const FIGHTERS = [
   {
     id: "jonathan-erasmus",
-    name: "Jonathan "The Wolf" Erasmus",
+    name: 'Jonathan "The Wolf" Erasmus',
     status: "Competitor",
     image: "assets/jonathan.jpeg",
     image_position: "center 18%",
@@ -17,11 +17,11 @@ const FIGHTERS = [
     mma_record: "3-5-0",
     instagram_url: "https://www.instagram.com/erasmus9563?igsh=MTVnNXpraXp1M2M1cA==",
     achievement: "Bronze Medallist — 2025 SA MMA Nationals",
-    bio: "Jonathan "The Wolf" Erasmus is a fierce featherweight contender stepping into the cage with a 3-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals."
+    bio: 'Jonathan "The Wolf" Erasmus is a fierce featherweight contender stepping into the cage with a 3-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals.'
   },
   {
     id: "damien-erasmus",
-    name: "Damiën "The Italian Stallion" Erasmus",
+    name: 'Damiën "The Italian Stallion" Erasmus',
     status: "Competitor",
     image: "assets/damien.jpeg",
     image_position: "center 14%",
@@ -30,7 +30,7 @@ const FIGHTERS = [
     mma_record: "2-7-0",
     instagram_url: "https://www.instagram.com/damienerasmus17?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     achievement: "Silver Medallist — 2025 SA MMA Nationals",
-    bio: "Damiën "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-7-0 record, highlighted by a brutal first-round KO that helped secure a silver medal at the 2025 Nationals. He also showcased serious grit by battling through five rounds in a championship title fight."
+    bio: 'Damiën "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-7-0 record, highlighted by a first-round KO that helped secure a silver medal at the 2025 Nationals. He also battled through five rounds in a championship title fight.'
   },
   {
     id: "austin-armstrong",

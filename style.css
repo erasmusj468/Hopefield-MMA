@@ -92,7 +92,7 @@ span{font:inherit}
 footer{background:#060606;border-top:1px solid #22201d;padding:30px 0;color:#77736c;font-size:11px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;align-items:center;gap:20px}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:48px;height:48px;object-fit:cover;border-radius:50%}.footer-brand b,.footer-brand span{display:block}.footer-brand b{color:#d8d3ca}.footer-brand span{font-size:9px;letter-spacing:.08em}
 .footer-grid>a{text-align:right;color:#a09b93}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:900px){
   .links{display:none;position:absolute;top:78px;left:0;right:0;background:#090909;padding:22px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu-btn{display:block}
   .hero-grid{grid-template-columns:1fr;gap:40px;padding-bottom:210px}.hero-logo-card{justify-self:start;max-width:330px}
