@@ -1,23 +1,31 @@
-# Hopefield MMA Website
+HOPEFIELD MMA WEBSITE — VERSION 2
 
-Static HTML/CSS/JavaScript website for Hopefield MMA.
-
-## Files
+FILES
 - index.html
 - style.css
+- data.js
 - script.js
+- assets/
 
-## Run
-Open `index.html` in a browser.
+IMPORTANT EDITING
+Most fighter details are in data.js.
+Edit weight_class, mma_record, instagram_url, bio and achievement there.
 
-## Before publishing
-1. Replace `[ADD_EMAIL_HERE]` in `script.js`.
-2. Replace placeholder gallery blocks with approved club photos.
-3. Add confirmed fighter bios and additional competition results.
-4. Add confirmed social media links if required.
-5. Connect the enquiry form to a real form service or backend if online submissions are required.
+CURRENT CONFIRMED CONTENT INCLUDED
+- Hopefield MMA logo
+- Contact: 082 867 2395
+- Email: erasmusj468@gmail.com
+- Hopefield, Western Cape
+- Damien Erasmus: 2nd place, 2025 SA MMA Nationals
+- Jonathan Erasmus: 3rd place, 2025 SA MMA Nationals
+- Current Saturday training schedule
+- Burger Geldenhuys, Seryn Armstrong, Austin Armstrong
+- Future competitors Shamiel Sierbritz and Juande Jansen
 
-The current site intentionally does not invent unknown club information.
+NOT INVENTED
+Unknown weight classes, records and Instagram URLs are left blank.
+Austin Armstrong currently has no supplied profile photo.
 
-## Included media
-The supplied Hopefield MMA logo is used as the primary brand asset. Supplied competition/team/medal photographs are used in the hero strip, achievements section and gallery.
+GITHUB + VERCEL
+Upload/replace these files in the same GitHub repository and commit.
+If Vercel is connected to the repository, it should automatically deploy the new commit.
