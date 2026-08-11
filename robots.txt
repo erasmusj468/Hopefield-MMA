@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hopefield-mma.vercel.app/sitemap.xml
