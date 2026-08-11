@@ -23,7 +23,7 @@ const FIGHTERS = [
     id: "damien-erasmus",
     name: 'Damiën "The Italian Stallion" Erasmus',
     status: "Competitor",
-    image: "damien-final.jpeg",
+    image: "assets/damien.jpeg",
     image_position: "center 14%",
     image_scale: 1.08,
     weight_class: "Featherweight",
@@ -42,7 +42,7 @@ const FIGHTERS = [
     weight_class: "Bantamweight",
     mma_record: "0-2-0",
     instagram_url: "",
-    achievement: "Hopefield MMA competitor",
+    achievement: "Previous Hopefield MMA competitor",
     bio: "Hopefield MMA competitor."
   },
   {
@@ -62,14 +62,14 @@ const FIGHTERS = [
     id: "seryn-armstrong",
     name: "Seryn Armstrong",
     status: "Former competitor",
-    image: "assets/first-fight-team.jpeg",
-    image_position: "100% 30%",
-    image_scale: 1.28,
+    image: "assets/seryn.jpeg",
+    image_position: "center 22%",
+    image_scale: 1.08,
     weight_class: "",
-    mma_record: "",
+    mma_record: "1-0-0",
     instagram_url: "",
     achievement: "Previous Hopefield MMA competitor",
-    bio: "Former Hopefield MMA competitor."
+    bio: "Former Hopefield MMA competitor with a 1-0-0 record."
   },
   {
     id: "shamiel-sierbritz",
