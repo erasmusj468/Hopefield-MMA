@@ -87,3 +87,47 @@ form?.addEventListener("submit", e => {
   window.location.href = `mailto:erasmusj468@gmail.com?subject=${subject}&body=${body}`;
   formStatus.textContent = "Opening your email app…";
 });
+
+
+// Coach training details — injected so the coach card remains easy to update.
+(function addCoachTrainingDetails() {
+  const coachInfo = document.querySelector('.coach-info');
+  if (!coachInfo || coachInfo.querySelector('.coach-specialties')) return;
+
+  const intro = coachInfo.querySelector('p');
+  if (intro) {
+    intro.textContent = 'Coach at Hopefield MMA, working across striking and grappling in private and group sessions.';
+  }
+
+  const specialties = document.createElement('div');
+  specialties.className = 'coach-specialties';
+  specialties.innerHTML = `
+    <div class="coach-specialty">
+      <span>STRIKING</span>
+      <strong>Boxing + Muay Thai</strong>
+      <p>A mixed striking approach combining boxing and Muay Thai.</p>
+    </div>
+    <div class="coach-specialty">
+      <span>GRAPPLING</span>
+      <strong>Judo + Jiu-Jitsu + Wrestling</strong>
+      <p>A mixed grappling approach combining judo, jiu-jitsu and wrestling.</p>
+    </div>
+    <div class="coach-specialty">
+      <span>SESSIONS</span>
+      <strong>Private + Group</strong>
+      <p>One-on-one private sessions and group training sessions.</p>
+    </div>`;
+  coachInfo.appendChild(specialties);
+
+  // Styling lives here so this patch only needs script.js.
+  const coachStyle = document.createElement('style');
+  coachStyle.textContent = `
+    .coach-specialties{display:grid;gap:10px;margin-top:20px}
+    .coach-specialty{padding:13px 15px;background:#0b0b0d;border:1px solid #2b2926;border-left:3px solid var(--gold,#bf8a38)}
+    .coach-specialty span{display:block;color:var(--gold2,#e0b766);font-size:9px;font-weight:800;letter-spacing:.16em;margin-bottom:3px}
+    .coach-specialty strong{display:block;color:#eee9df;font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:17px;line-height:1.25}
+    .coach-specialty p{margin-top:4px;font-size:12px;color:#8f8a82;line-height:1.45}
+    @media(max-width:620px){.coach-specialty{padding:12px}.coach-specialty strong{font-size:16px}}
+  `;
+  document.head.appendChild(coachStyle);
+})();
