@@ -47,6 +47,15 @@ span{font:inherit}
 .intro-copy{color:#c0bcb5;font-size:17px}.intro-copy p+p{margin-top:20px}.muted{color:#86827b}
 .section-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:50px}
 .section-head>p{max-width:440px;color:#8f8b84;font-size:14px}
+
+.coach-section{background:#090909}
+.coach-card{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:42px;align-items:center;background:linear-gradient(135deg,#141416,#0c0c0e);border:1px solid var(--line);padding:22px;max-width:920px}
+.coach-photo-wrap{height:500px;overflow:hidden;background:#111}
+.coach-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.coach-info{padding:20px 20px 20px 0}
+.coach-info h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:clamp(34px,4vw,54px);line-height:1;margin-bottom:14px}
+.coach-info p{color:#9b968e;font-size:15px}
+
 .fighter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fighter-card{background:linear-gradient(180deg,#171719,#0e0e10);border:1px solid var(--line);overflow:hidden;position:relative;transition:.25s}
 .fighter-card:hover{transform:translateY(-5px);border-color:#5b482b}
@@ -103,6 +112,10 @@ footer{background:#060606;border-top:1px solid #22201d;padding:30px 0;color:#777
   .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>a{text-align:left}
 }
 @media(max-width:620px){
+  .coach-card{grid-template-columns:1fr;gap:18px;padding:16px}
+  .coach-photo-wrap{height:420px}
+  .coach-info{padding:10px 8px 18px}
+
   .hero-photo{background-position:center 28%;background-size:74vw auto;opacity:.24}
   .hero-shade{background:linear-gradient(180deg,rgba(8,8,8,.62),#080808 72%)}
   .fighter-image-wrap{height:315px}
