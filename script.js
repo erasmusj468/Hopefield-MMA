@@ -131,3 +131,30 @@ form?.addEventListener("submit", e => {
   `;
   document.head.appendChild(coachStyle);
 })();
+
+
+// Training membership price — shown beside the Saturday session times.
+(function addTrainingPrice() {
+  const cards = document.querySelectorAll('.training-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    if (card.querySelector('.training-price')) return;
+    const time = card.querySelector('.time');
+    if (!time) return;
+
+    const price = document.createElement('div');
+    price.className = 'training-price';
+    price.innerHTML = `<span>MONTHLY MEMBERSHIP</span><strong>R200 p/m</strong>`;
+    time.insertAdjacentElement('afterend', price);
+  });
+
+  const priceStyle = document.createElement('style');
+  priceStyle.textContent = `
+    .training-price{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:10px 0 16px;padding:11px 13px;border:1px solid #3b3428;background:#0b0b0d}
+    .training-price span{font-size:9px;font-weight:800;letter-spacing:.14em;color:#8f8a82}
+    .training-price strong{font-family:Oswald,Impact,sans-serif;font-size:20px;letter-spacing:.04em;color:var(--gold2,#e0b766);text-transform:uppercase}
+    @media(max-width:620px){.training-price{align-items:flex-start;flex-direction:column;gap:4px}.training-price strong{font-size:19px}}
+  `;
+  document.head.appendChild(priceStyle);
+})();
