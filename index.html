@@ -10,6 +10,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style id="membership-layout-fix">
+    .training-price{display:none !important;}
+    .training-membership-shared{
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      margin-top:18px;padding:15px 18px;border:1px solid #3b3428;background:#0b0b0d;
+    }
+    .training-membership-shared span{font-size:10px;font-weight:800;letter-spacing:.15em;color:#8f8a82;}
+    .training-membership-shared strong{font-family:Oswald,Impact,sans-serif;font-size:24px;letter-spacing:.04em;color:#e0b766;text-transform:uppercase;}
+    .training-membership-shared small{font-size:11px;color:#77736c;}
+    @media(max-width:620px){
+      .training-membership-shared{align-items:flex-start;flex-direction:column;gap:4px;}
+      .training-membership-shared strong{font-size:22px;}
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -195,6 +210,12 @@
             <div class="time">18:30 <span>→</span> 20:30</div>
             <p>Two-hour MMA training session.</p>
           </article>
+        </div>
+
+        <div class="training-membership-shared">
+          <span>MONTHLY MEMBERSHIP</span>
+          <strong>R200 p/m</strong>
+          <small>Includes both Saturday session formats</small>
         </div>
       </div>
     </section>
