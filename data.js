@@ -113,14 +113,15 @@ const GALLERY = [
   {src:"damien-action-3.jpeg", alt:"Hopefield MMA cage action"},
   {src:"burger-2.jpeg", alt:"Hopefield MMA competition photo"},
   {src:"damien-press.jpeg", alt:"Hopefield MMA media event"},
-  {src:"bronze-nationals.jpeg", alt:"2025 SA MMA Nationals bronze medal"},
-  {src:"silver-nationals.jpeg", alt:"2025 SA MMA Nationals silver medal"},
-  {src:"jonathan.jpeg", alt:"Jonathan Erasmus"},
-  {src:"damien-final.jpeg", alt:"Damien Erasmus"},
-  {src:"austin.jpeg", alt:"Austin Armstrong"},
-  {src:"burger.jpeg", alt:"Burger Geldenhuys"},
-  {src:"seryn.jpeg", alt:"Seryn Armstrong"},
-  {src:"samil.jpeg", alt:"Shamiel Sierbritz"},
-  {src:"juande.jpeg", alt:"Juande Jansen"},
-  {src:"coach.jpeg", alt:"Gerhardt Erasmus, Hopefield MMA coach"}
+
+  {src:"gallery-faceoff-01.jpg", alt:"Hopefield MMA pre-fight faceoff"},
+  {src:"gallery-coach-medal.jpg", alt:"Hopefield MMA coach and fighter after competition"},
+  {src:"gallery-faceoff-02.webp", alt:"Hopefield MMA official faceoff"},
+  {src:"gallery-cage-venue.jpg", alt:"MMA cage and event venue before competition"},
+  {src:"gallery-travel-medals.jpg", alt:"Hopefield MMA athletes travelling with competition medals"},
+  {src:"gallery-faceoff-03.jpg", alt:"Hopefield MMA weigh-in faceoff"},
+  {src:"gallery-faceoff-04.jpg", alt:"Hopefield MMA competition faceoff"},
+  {src:"gallery-faceoff-05.jpg", alt:"Women competitors at an MMA faceoff"},
+  {src:"gallery-faceoff-06.jpg", alt:"MMA competitors at a pre-fight faceoff"},
+  {src:"gallery-walkout.jpeg", alt:"Hopefield MMA fighter walkout at an event"}
 ];

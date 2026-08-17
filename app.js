@@ -5,9 +5,6 @@ document.querySelector(`[data-page-link="${page}"]`)?.classList.add("active");
 
 document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
-const fightersData = (typeof FIGHTERS !== "undefined" && Array.isArray(FIGHTERS)) ? FIGHTERS : [];
-const galleryData = (typeof GALLERY !== "undefined" && Array.isArray(GALLERY)) ? GALLERY : [];
-
 
 // Mobile page navigation: always visible on phones so visitors can move between pages quickly.
 const mobileNav=document.createElement("nav");
@@ -55,9 +52,9 @@ function fighterCard(f){
 }
 
 const fighterGrid=document.getElementById("fighterGrid");
-if(fighterGrid && fightersData.length){fighterGrid.innerHTML=fightersData.map(fighterCard).join("");fighterGrid.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"))}
+if(fighterGrid && Array.isArray(FIGHTERS)){fighterGrid.innerHTML=FIGHTERS.map(fighterCard).join("");fighterGrid.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"))}
 const featured=document.getElementById("featuredFighters");
-if(featured && fightersData.length){featured.innerHTML=fightersData.filter(f=>f.category==="competitor").slice(0,3).map(fighterCard).join("");featured.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"))}
+if(featured && Array.isArray(FIGHTERS)){featured.innerHTML=FIGHTERS.filter(f=>f.category==="competitor").slice(0,3).map(fighterCard).join("");featured.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"))}
 
 document.querySelectorAll(".filter-btn").forEach(btn=>btn.addEventListener("click",()=>{
   document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");
@@ -76,7 +73,7 @@ document.addEventListener("click",e=>{
 });
 
 const galleryGrid=document.getElementById("galleryGrid");
-if(galleryGrid && galleryData.length) galleryGrid.innerHTML=galleryData.map((g,i)=>`<figure class="gallery-item reveal" tabindex="0" role="button" data-index="${i}" aria-label="Open gallery image"><img loading="lazy" decoding="async" src="${g.src}" alt="${g.alt}"></figure>`).join("");
+if(galleryGrid && Array.isArray(GALLERY)) galleryGrid.innerHTML=GALLERY.map((g,i)=>`<figure class="gallery-item reveal" tabindex="0" role="button" data-index="${i}" aria-label="Open gallery image"><img loading="lazy" decoding="async" src="${g.src}" alt="${g.alt}"></figure>`).join("");
 if(galleryGrid) galleryGrid.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"));
 
 let lightboxIndex=0;
@@ -91,7 +88,7 @@ function ensureLightbox(){
 }
 const lb=ensureLightbox(), lbImg=document.getElementById("lightboxImg"), lbPrev=document.getElementById("lbPrev"), lbNext=document.getElementById("lbNext");
 function setLightboxNavigation(show){lbPrev.hidden=!show;lbNext.hidden=!show}
-function showLightbox(i){if(!lb||!lbImg||!galleryData.length)return;lightboxIndex=(i+galleryData.length)%galleryData.length;lbImg.src=galleryData[lightboxIndex].src;lbImg.alt=galleryData[lightboxIndex].alt;setLightboxNavigation(true);lb.classList.add("open");document.body.style.overflow="hidden"}
+function showLightbox(i){if(!lb||!lbImg||!Array.isArray(GALLERY)||!GALLERY.length)return;lightboxIndex=(i+GALLERY.length)%GALLERY.length;lbImg.src=GALLERY[lightboxIndex].src;lbImg.alt=GALLERY[lightboxIndex].alt;setLightboxNavigation(true);lb.classList.add("open");document.body.style.overflow="hidden"}
 function showSingleImage(src,alt){if(!lb||!lbImg)return;lbImg.src=src;lbImg.alt=alt||"Hopefield MMA image";setLightboxNavigation(false);lb.classList.add("open");document.body.style.overflow="hidden"}
 function closeLightbox(){lb?.classList.remove("open");document.body.style.overflow=""}
 galleryGrid?.addEventListener("click",e=>{const item=e.target.closest(".gallery-item");if(item)showLightbox(Number(item.dataset.index))});
@@ -121,13 +118,3 @@ lb?.addEventListener("touchend",e=>{if(lbPrev.hidden)return;const dx=(e.changedT
 
 const form=document.getElementById("contactForm");
 form?.addEventListener("submit",e=>{e.preventDefault();const name=document.getElementById("name").value.trim(),reply=document.getElementById("reply").value.trim(),message=document.getElementById("message").value.trim();if(!name||!reply||!message)return;const subject=encodeURIComponent(`Hopefield MMA enquiry from ${name}`),body=encodeURIComponent(`Name: ${name}\nPhone / Email: ${reply}\n\n${message}`);window.location.href=`mailto:erasmusj468@gmail.com?subject=${subject}&body=${body}`});
-
-
-// Keep cards visible even if one image path fails during a deployment.
-document.addEventListener("error", e => {
-  const img = e.target;
-  if (!(img instanceof HTMLImageElement)) return;
-  img.classList.add("photo-load-error");
-  const wrap = img.closest(".fighter-image,.gallery-item,.coach-photo");
-  if (wrap) wrap.classList.add("has-image-error");
-}, true);
