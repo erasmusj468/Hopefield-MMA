@@ -132,3 +132,95 @@ html{scroll-behavior:smooth}body{font-family:Inter,Arial,sans-serif;background:v
 @media(max-width:390px){
   .gallery-grid{grid-auto-rows:360px}
 }
+
+
+/* =========================================================
+   LARGE MASONRY / TILE GALLERY
+   Keeps the big-gallery feel, but lets different photo
+   shapes stagger naturally instead of using equal boxes.
+   ========================================================= */
+
+.gallery-grid{
+  display:block !important;
+  column-count:2;
+  column-gap:16px;
+  grid-template-columns:none !important;
+  grid-auto-rows:unset !important;
+}
+
+.gallery-item,
+.gallery-item:nth-child(n){
+  display:block;
+  width:100%;
+  height:auto !important;
+  margin:0 0 16px;
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #2b2823;
+  background:#0d0d0f;
+  cursor:zoom-in;
+  grid-column:auto !important;
+  grid-row:auto !important;
+}
+
+.gallery-item img,
+.gallery-item:nth-child(n) img{
+  display:block;
+  width:100%;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+}
+
+/* The tall standing face-off photo: keep the faces/upper bodies visible. */
+.gallery-item img[src="gallery-faceoff-06.jpg"]{
+  object-position:center top !important;
+}
+
+.gallery-item:after{
+  content:"Click to view full";
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  padding:6px 8px;
+  background:rgba(6,6,7,.78);
+  border:1px solid rgba(255,255,255,.16);
+  color:#eee9df;
+  font-size:8px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  pointer-events:none;
+}
+
+@media(max-width:900px){
+  .gallery-grid{
+    column-count:2;
+    column-gap:12px;
+  }
+  .gallery-item,
+  .gallery-item:nth-child(n){
+    margin-bottom:12px;
+  }
+}
+
+@media(max-width:620px){
+  .gallery-grid{
+    column-count:1;
+    column-gap:0;
+  }
+  .gallery-item,
+  .gallery-item:nth-child(n){
+    margin-bottom:14px;
+  }
+  .gallery-item:after{
+    content:"Tap to view full";
+    right:9px;
+    bottom:9px;
+  }
+}

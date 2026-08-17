@@ -1,11 +1,13 @@
-HOPEFIELD MMA — BIG GALLERY PATCH
+HOPEFIELD MMA — MASONRY GALLERY PATCH
 
-Replace only style.css in the root of the GitHub repository.
+Replace only style.css in the root of GitHub.
 
-Gallery changes:
-- Desktop: 2 large images per row.
-- Mobile: 1 large image per row.
-- No small thumbnail rows.
-- Gallery can intentionally be a long scroll.
-- Clicking/tapping an image still opens the full-screen viewer.
-- Team/profile card sizing is not changed.
+Changes:
+- Restores the staggered / tile / masonry Gallery look.
+- Photos remain large.
+- Different image shapes keep different heights.
+- Desktop/tablet: 2 large masonry columns.
+- Mobile: 1 large photo column to avoid tiny thumbnails.
+- Tall face-off photo prioritises the faces/upper part instead of the middle body crop.
+- Full-screen image viewer still works.
+- Team page sizing/content is not changed.
