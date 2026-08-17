@@ -5,6 +5,21 @@ document.querySelector(`[data-page-link="${page}"]`)?.classList.add("active");
 
 document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
+
+// Mobile page navigation: always visible on phones so visitors can move between pages quickly.
+const mobileNav=document.createElement("nav");
+mobileNav.className="mobile-page-nav";
+mobileNav.setAttribute("aria-label","Mobile page navigation");
+mobileNav.innerHTML=`
+  <a data-mobile-page="home" href="index.html"><span>Home</span></a>
+  <a data-mobile-page="team" href="team.html"><span>Team</span></a>
+  <a data-mobile-page="achievements" href="achievements.html"><span>Awards</span></a>
+  <a data-mobile-page="training" href="training.html"><span>Training</span></a>
+  <a data-mobile-page="gallery" href="gallery.html"><span>Gallery</span></a>
+  <a data-mobile-page="contact" href="contact.html"><span>Contact</span></a>`;
+document.body.appendChild(mobileNav);
+mobileNav.querySelector(`[data-mobile-page="${page}"]`)?.classList.add("active");
+
 const header = document.getElementById("siteHeader");
 const progress = document.getElementById("scrollProgress");
 const backTop = document.getElementById("backTop");
@@ -31,8 +46,8 @@ function fighterCard(f){
   const chips=[f.weight_class?`<span class="chip">${f.weight_class}</span>`:"",f.mma_record?`<span class="chip">Record: ${f.mma_record}</span>`:""].join("");
   const social=f.instagram_url?`<a class="social-link" href="${f.instagram_url}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>`:"";
   return `<article class="fighter-card reveal" data-category="${f.category}">
-    <div class="fighter-image"><img loading="lazy" decoding="async" src="${f.image}" alt="${f.short_name} — Hopefield MMA" style="--fighter-position:${f.image_position};--fighter-scale:${f.image_scale}"><span class="fighter-badge">${f.status}</span></div>
-    <div class="fighter-body"><h3>${f.name}</h3><div class="chips">${chips}</div><p>${f.bio}</p><div class="achievement">${f.achievement}</div>${social}</div>
+    <div class="fighter-image" role="button" tabindex="0" aria-label="View ${f.short_name} photo full screen"><img loading="lazy" decoding="async" src="${f.image}" alt="${f.short_name} — Hopefield MMA" style="--fighter-position:${f.image_position};--fighter-scale:${f.image_scale}"><span class="fighter-badge">${f.status}</span><span class="image-hint">Tap photo</span></div>
+    <div class="fighter-body"><h3>${f.name}</h3><div class="chips">${chips}</div><div class="fighter-extra"><p>${f.bio}</p><div class="achievement">${f.achievement}</div>${social}</div><button class="fighter-more" type="button" aria-expanded="false">Details</button></div>
   </article>`
 }
 
@@ -46,18 +61,60 @@ document.querySelectorAll(".filter-btn").forEach(btn=>btn.addEventListener("clic
   const target=btn.dataset.filter;document.querySelectorAll("#fighterGrid .fighter-card").forEach(card=>card.hidden=target!=="all"&&card.dataset.category!==target);
 }));
 
+
+// Compact mobile fighter cards can be expanded without forcing long scrolling.
+document.addEventListener("click",e=>{
+  const btn=e.target.closest(".fighter-more");
+  if(!btn)return;
+  const card=btn.closest(".fighter-card");
+  const expanded=card.classList.toggle("expanded");
+  btn.setAttribute("aria-expanded",String(expanded));
+  btn.textContent=expanded?"Hide details":"Details";
+});
+
 const galleryGrid=document.getElementById("galleryGrid");
 if(galleryGrid && Array.isArray(GALLERY)) galleryGrid.innerHTML=GALLERY.map((g,i)=>`<figure class="gallery-item reveal" tabindex="0" role="button" data-index="${i}" aria-label="Open gallery image"><img loading="lazy" decoding="async" src="${g.src}" alt="${g.alt}"></figure>`).join("");
 if(galleryGrid) galleryGrid.querySelectorAll(".reveal").forEach(el=>observer?observer.observe(el):el.classList.add("visible"));
 
-let lightboxIndex=0; const lb=document.getElementById("lightbox"), lbImg=document.getElementById("lightboxImg");
-function showLightbox(i){if(!lb||!lbImg||!GALLERY?.length)return;lightboxIndex=(i+GALLERY.length)%GALLERY.length;lbImg.src=GALLERY[lightboxIndex].src;lbImg.alt=GALLERY[lightboxIndex].alt;lb.classList.add("open");document.body.style.overflow="hidden"}
+let lightboxIndex=0;
+function ensureLightbox(){
+  let viewer=document.getElementById("lightbox");
+  if(viewer)return viewer;
+  viewer=document.createElement("div");
+  viewer.className="lightbox";viewer.id="lightbox";viewer.setAttribute("role","dialog");viewer.setAttribute("aria-modal","true");viewer.setAttribute("aria-label","Image viewer");
+  viewer.innerHTML='<button class="lb-close" id="lbClose" aria-label="Close">×</button><button class="lb-prev" id="lbPrev" aria-label="Previous image">‹</button><img id="lightboxImg" alt=""><button class="lb-next" id="lbNext" aria-label="Next image">›</button>';
+  document.body.appendChild(viewer);
+  return viewer;
+}
+const lb=ensureLightbox(), lbImg=document.getElementById("lightboxImg"), lbPrev=document.getElementById("lbPrev"), lbNext=document.getElementById("lbNext");
+function setLightboxNavigation(show){lbPrev.hidden=!show;lbNext.hidden=!show}
+function showLightbox(i){if(!lb||!lbImg||!Array.isArray(GALLERY)||!GALLERY.length)return;lightboxIndex=(i+GALLERY.length)%GALLERY.length;lbImg.src=GALLERY[lightboxIndex].src;lbImg.alt=GALLERY[lightboxIndex].alt;setLightboxNavigation(true);lb.classList.add("open");document.body.style.overflow="hidden"}
+function showSingleImage(src,alt){if(!lb||!lbImg)return;lbImg.src=src;lbImg.alt=alt||"Hopefield MMA image";setLightboxNavigation(false);lb.classList.add("open");document.body.style.overflow="hidden"}
 function closeLightbox(){lb?.classList.remove("open");document.body.style.overflow=""}
 galleryGrid?.addEventListener("click",e=>{const item=e.target.closest(".gallery-item");if(item)showLightbox(Number(item.dataset.index))});
 galleryGrid?.addEventListener("keydown",e=>{const item=e.target.closest(".gallery-item");if(item&&(e.key==="Enter"||e.key===" ")){e.preventDefault();showLightbox(Number(item.dataset.index))}});
-document.getElementById("lbClose")?.addEventListener("click",closeLightbox);document.getElementById("lbPrev")?.addEventListener("click",()=>showLightbox(lightboxIndex-1));document.getElementById("lbNext")?.addEventListener("click",()=>showLightbox(lightboxIndex+1));
-document.addEventListener("keydown",e=>{if(!lb?.classList.contains("open"))return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowLeft")showLightbox(lightboxIndex-1);if(e.key==="ArrowRight")showLightbox(lightboxIndex+1)});
+document.addEventListener("click",e=>{
+  const imageWrap=e.target.closest(".fighter-image,.coach-photo,.medal-card");
+  if(!imageWrap || imageWrap.closest("#galleryGrid"))return;
+  const img=imageWrap.querySelector("img");if(img)showSingleImage(img.currentSrc||img.src,img.alt);
+});
+document.addEventListener("keydown",e=>{
+  const imageWrap=e.target.closest?.(".fighter-image,.coach-photo,.medal-card");
+  if(imageWrap&&(e.key==="Enter"||e.key===" ")){const img=imageWrap.querySelector("img");if(img){e.preventDefault();showSingleImage(img.currentSrc||img.src,img.alt)}}
+  if(!lb?.classList.contains("open"))return;
+  if(e.key==="Escape")closeLightbox();
+  if(!lbPrev.hidden&&e.key==="ArrowLeft")showLightbox(lightboxIndex-1);
+  if(!lbNext.hidden&&e.key==="ArrowRight")showLightbox(lightboxIndex+1);
+});
+document.getElementById("lbClose")?.addEventListener("click",closeLightbox);
+lbPrev?.addEventListener("click",()=>showLightbox(lightboxIndex-1));
+lbNext?.addEventListener("click",()=>showLightbox(lightboxIndex+1));
 lb?.addEventListener("click",e=>{if(e.target===lb)closeLightbox()});
+
+// Simple swipe support in the gallery lightbox on touch devices.
+let touchStartX=0;
+lb?.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0]?.screenX||0},{passive:true});
+lb?.addEventListener("touchend",e=>{if(lbPrev.hidden)return;const dx=(e.changedTouches[0]?.screenX||0)-touchStartX;if(Math.abs(dx)>55)showLightbox(lightboxIndex+(dx<0?1:-1))},{passive:true});
 
 const form=document.getElementById("contactForm");
 form?.addEventListener("submit",e=>{e.preventDefault();const name=document.getElementById("name").value.trim(),reply=document.getElementById("reply").value.trim(),message=document.getElementById("message").value.trim();if(!name||!reply||!message)return;const subject=encodeURIComponent(`Hopefield MMA enquiry from ${name}`),body=encodeURIComponent(`Name: ${name}\nPhone / Email: ${reply}\n\n${message}`);window.location.href=`mailto:erasmusj468@gmail.com?subject=${subject}&body=${body}`});

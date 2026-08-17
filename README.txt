@@ -1,10 +1,12 @@
-HOPEFIELD MMA — TEAM + GALLERY FIX
+HOPEFIELD MMA — MOBILE POLISH PATCH
 
-Upload/replace data.js and team.html in the repository root.
-Then upload the CONTENTS of this patch's assets folder into your existing GitHub assets folder.
+Replace only style.css and app.js in the repository root.
 
-Changes:
-- Team page remains profile-only; no action/event gallery section is added there.
-- All fighter/coach profile images use new profile-* filenames to avoid broken/stale paths.
-- Gallery includes all action/event/team photos, including action-3.
-- Gallery image files are included so broken/missing gallery assets can be restored.
+Desktop layout/content stays intact. Mobile improvements:
+- smaller profile and gallery images
+- tap profile/coach/medal/gallery images for full-screen viewer
+- compact fighter cards with Details toggle
+- two-column mobile gallery
+- tighter page spacing
+- fixed mobile page navigation for easy page switching
+- improved mobile menu and lightbox
