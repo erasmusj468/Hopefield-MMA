@@ -1,11 +1,11 @@
-HOPEFIELD MMA — GALLERY CLEANUP
+HOPEFIELD MMA — BIG GALLERY PATCH
 
-Upload these files to the ROOT of the GitHub repository.
+Replace only style.css in the root of the GitHub repository.
 
-Changes:
-- Added 10 new event/fight photos to Gallery.
-- Removed bronze and silver Nationals medal photos from Gallery.
-- Removed fighter and coach profile photos from Gallery.
-- Team fighter/profile photos remain on the Team page.
-- Fighter and coach photos can be clicked/tapped to open full-screen.
-- Existing event/action Gallery photos were kept.
+Gallery changes:
+- Desktop: 2 large images per row.
+- Mobile: 1 large image per row.
+- No small thumbnail rows.
+- Gallery can intentionally be a long scroll.
+- Clicking/tapping an image still opens the full-screen viewer.
+- Team/profile card sizing is not changed.
