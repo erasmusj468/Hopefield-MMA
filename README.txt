@@ -1,12 +1,10 @@
-HOPEFIELD MMA — MOBILE POLISH PATCH
+HOPEFIELD MMA — PHOTO RECOVERY PATCH
 
-Replace only style.css and app.js in the repository root.
+Upload these items to the same locations in your GitHub repository:
+- app.js -> repository root
+- data.js -> repository root
+- style.css -> repository root
+- team.html -> repository root
+- contents of assets/ -> existing assets/ folder
 
-Desktop layout/content stays intact. Mobile improvements:
-- smaller profile and gallery images
-- tap profile/coach/medal/gallery images for full-screen viewer
-- compact fighter cards with Details toggle
-- two-column mobile gallery
-- tighter page spacing
-- fixed mobile page navigation for easy page switching
-- improved mobile menu and lightbox
+This patch restores the profile/gallery image paths and keeps the mobile polish.
