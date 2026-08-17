@@ -3,289 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Hopefield MMA — competitive mixed martial arts club in Hopefield, Western Cape. See our fighters, national achievements and training schedule.">
   <meta name="theme-color" content="#080808">
-  <title>Hopefield MMA | Fighters • Competition • Community</title>
+  <meta name="description" content="Hopefield MMA is a mixed martial arts club in Hopefield, Western Cape. Meet the team, see national achievements, training times and contact details.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hopefield MMA | MMA Club in Hopefield, Western Cape">
+  <meta property="og:description" content="Hopefield MMA is a mixed martial arts club in Hopefield, Western Cape. Meet the team, see national achievements, training times and contact details.">
+  <meta property="og:image" content="https://hopefield-mma.vercel.app/assets/logo.jpeg">
+  <meta property="og:url" content="https://hopefield-mma.vercel.app/">
+  <link rel="canonical" href="https://hopefield-mma.vercel.app/">
+  <link rel="icon" href="assets/logo.jpeg">
+  <title>Hopefield MMA | MMA Club in Hopefield, Western Cape</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <style id="membership-layout-fix">
-    .training-price{display:none !important;}
-    .training-membership-shared{
-      display:flex;align-items:center;justify-content:space-between;gap:18px;
-      margin-top:18px;padding:15px 18px;border:1px solid #3b3428;background:#0b0b0d;
-    }
-    .training-membership-shared span{font-size:10px;font-weight:800;letter-spacing:.15em;color:#8f8a82;}
-    .training-membership-shared strong{font-family:Oswald,Impact,sans-serif;font-size:24px;letter-spacing:.04em;color:#e0b766;text-transform:uppercase;}
-    .training-membership-shared small{font-size:11px;color:#77736c;}
-    @media(max-width:620px){
-      .training-membership-shared{align-items:flex-start;flex-direction:column;gap:4px;}
-      .training-membership-shared strong{font-size:22px;}
-    }
-  </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="container nav">
-      <a href="#home" class="brand">
-        <img src="assets/logo.jpeg" alt="Hopefield MMA Club logo">
-        <span>HOPEFIELD <b>MMA</b></span>
-      </a>
+<body data-page="home">
 
-      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Hopefield MMA home">
+      <img src="assets/logo.jpeg" alt="Hopefield MMA Club logo">
+      <span>HOPEFIELD <b>MMA</b></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a data-page-link="home" href="index.html">Home</a>
+      <a data-page-link="team" href="team.html">Team</a>
+      <a data-page-link="achievements" href="achievements.html">Achievements</a>
+      <a data-page-link="training" href="training.html">Training</a>
+      <a data-page-link="gallery" href="gallery.html">Gallery</a>
+      <a data-page-link="contact" class="nav-cta" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-      <nav id="mainNav" class="links" aria-label="Main navigation">
-        <a href="#coach">Coach</a>
-        <a href="#fighters">Fighters</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#training">Training</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact" class="nav-contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-photo"></div>
-      <div class="hero-shade"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="kicker">HOPEFIELD • WESTERN CAPE</div>
-          <h1>TRAIN.<br><span>COMPETE.</span><br>REPRESENT.</h1>
-          <p>
-            Hopefield MMA is a competition-focused mixed martial arts club
-            developing fighters through discipline, hard training and real event experience.
-          </p>
-          <div class="hero-buttons">
-            <a href="#fighters" class="btn primary">MEET THE FIGHTERS</a>
-            <a href="#contact" class="btn outline">JOIN / ENQUIRE</a>
-          </div>
-        </div>
+<main>
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-overlay"></div>
+  <div class="container hero-grid">
+    <div class="reveal"><div class="eyebrow">HOPEFIELD • WESTERN CAPE</div><h1>TRAIN.<br><span class="gold">COMPETE.</span><br>REPRESENT.</h1><p>Hopefield MMA is a competition-focused mixed martial arts club developing fighters through discipline, hard training and real event experience.</p><div class="button-row"><a class="btn primary" href="team.html">Meet the Team</a><a class="btn ghost" href="training.html">Training & Pricing</a></div></div>
+    <div class="hero-card reveal"><img src="assets/logo.jpeg" alt="Hopefield MMA Club logo"><div class="hero-card-meta"><strong>Hopefield MMA Club</strong><span>Est. 2023</span></div></div>
+  </div>
+  <div class="trust-strip"><div><strong>2025</strong><span>SA MMA Nationals</span></div><div><strong>🥈 2ND</strong><span>Damien Erasmus</span></div><div><strong>🥉 3RD</strong><span>Jonathan Erasmus</span></div><div><strong>HOPEFIELD</strong><span>Western Cape</span></div></div>
+</section>
+<section class="section"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">EXPLORE THE CLUB</div><h2>EVERYTHING <span class="gold">IN ONE PLACE.</span></h2></div><p>Separate pages make it easier to find fighters, training information, achievements and contact details without scrolling through one long page.</p></div><div class="quick-grid"><a class="quick-card reveal" href="team.html"><span class="num">01</span><div><h3>Team</h3><p>Meet coach Gerhardt Erasmus, current competitors, former competitors and future fighters.</p></div><span class="link-arrow">View team →</span></a><a class="quick-card reveal" href="achievements.html"><span class="num">02</span><div><h3>Achievements</h3><p>See Hopefield MMA's 2025 SA MMA Nationals podium finishes and medal photography.</p></div><span class="link-arrow">View achievements →</span></a><a class="quick-card reveal" href="training.html"><span class="num">03</span><div><h3>Training</h3><p>Saturday session times, monthly membership, private sessions and group session pricing.</p></div><span class="link-arrow">View training →</span></a></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">CURRENT COMPETITORS</div><h2>THE <span class="gold">FIGHTERS.</span></h2></div><a class="link-arrow" href="team.html">View full roster →</a></div><div class="featured-fighters" id="featuredFighters"></div></div></section>
+<section class="cta-band"><div class="container cta-inner"><div><div class="eyebrow">READY TO TRAIN?</div><h2>JOIN <span class="gold">HOPEFIELD MMA.</span></h2></div><div class="button-row"><a class="btn primary" href="contact.html">Contact the Club</a><a class="btn ghost" href="https://wa.me/27828672395" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="assets/logo.jpeg" alt=""><div><strong>HOPEFIELD MMA</strong><span>Train • Compete • Represent</span></div></div>
+    <div class="footer-contact"><a href="tel:+27828672395">082 867 2395</a><a href="mailto:erasmusj468@gmail.com">erasmusj468@gmail.com</a></div>
+    <div class="footer-meta"><span>Hopefield, Western Cape</span><span>© <span data-year></span> Hopefield MMA Club</span></div>
+  </div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/27828672395" target="_blank" rel="noopener" aria-label="WhatsApp Hopefield MMA">WA</a>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
-        <div class="hero-logo-card reveal">
-          <img src="assets/logo.jpeg" alt="Hopefield MMA Club 2023 logo">
-          <div>
-            <strong>HOPEFIELD MMA CLUB</strong>
-            <span>EST. 2023</span>
-          </div>
-        </div>
-      </div>
+<script src="data.js"></script>
+<script src="app.js"></script>
 
-      <div class="achievement-strip">
-        <div><b>2025</b><span>SA MMA Nationals</span></div>
-        <div><b>🥈 2ND</b><span>Damien Erasmus</span></div>
-        <div><b>🥉 3RD</b><span>Jonathan Erasmus</span></div>
-        <div><b>HOPEFIELD</b><span>Western Cape</span></div>
-      </div>
-    </section>
-
-    <section class="section intro">
-      <div class="container intro-grid">
-        <div class="section-title reveal">
-          <div class="kicker">THE CLUB</div>
-          <h2>A SMALL CLUB WITH <span>REAL COMPETITION EXPERIENCE.</span></h2>
-        </div>
-        <div class="intro-copy reveal">
-          <p>
-            Hopefield MMA is built around training, development and competition.
-            Our athletes have stepped into the cage, represented the club at events,
-            and reached the podium at the 2025 SA MMA Nationals.
-          </p>
-          <p class="muted">
-            This site is designed to grow with the club — fighter profiles, records,
-            weight classes, Instagram links and new results can be updated from one data file.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section coach-section" id="coach">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">COACH</div>
-            <h2>MEET THE <span>COACH.</span></h2>
-          </div>
-          <p>The coach behind Hopefield MMA.</p>
-        </div>
-        <article class="coach-card reveal">
-          <div class="coach-photo-wrap"><img src="coach.jpeg" alt="Gerhardt Erasmus — Hopefield MMA coach"></div>
-          <div class="coach-info">
-            <div class="kicker">HOPEFIELD MMA COACH</div>
-            <h3>Gerhardt Erasmus</h3>
-            <p>Coach at Hopefield MMA.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section dark" id="fighters">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">ROSTER</div>
-            <h2>OUR <span>FIGHTERS.</span></h2>
-          </div>
-          <p>Current, former and future competitors connected to Hopefield MMA.</p>
-        </div>
-
-        <div id="fighterGrid" class="fighter-grid"></div>
-      </div>
-    </section>
-
-    <section class="section achievements" id="achievements">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">2025 SA MMA NATIONALS</div>
-            <h2>NATIONAL <span>PODIUM FINISHES.</span></h2>
-          </div>
-          <p>Two Hopefield MMA competitors reached the podium at the 2025 Nationals.</p>
-        </div>
-
-        <div class="medal-grid">
-          <article class="medal-card silver reveal">
-            <img src="assets/silver-nationals.jpeg" alt="Silver SA MMA Nationals medal">
-            <div class="medal-info">
-              <span class="place">02</span>
-              <div>
-                <div class="kicker">SECOND PLACE</div>
-                <h3>Damien Erasmus</h3>
-                <p>2025 SA MMA Nationals</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="medal-card bronze reveal">
-            <img src="assets/bronze-nationals.jpeg" alt="Bronze SA MMA Nationals medal">
-            <div class="medal-info">
-              <span class="place">03</span>
-              <div>
-                <div class="kicker">THIRD PLACE</div>
-                <h3>Jonathan Erasmus</h3>
-                <p>2025 SA MMA Nationals</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="competition-note reveal">
-          <div class="line"></div>
-          <p>
-            More competition results can be added as the club grows. The structure is ready
-            for event names, dates, weight classes, results and links.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="training">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">TRAINING</div>
-            <h2>SATURDAY <span>SESSIONS.</span></h2>
-          </div>
-          <p>Current MMA session times supplied by Hopefield MMA.</p>
-        </div>
-
-        <div class="training-grid">
-          <article class="training-card reveal">
-            <span class="num">01</span>
-            <div class="kicker">EVERY SECOND SATURDAY</div>
-            <h3>LONG SESSION</h3>
-            <div class="time">10:00 <span>→</span> 15:00</div>
-            <p>Five-hour MMA training session.</p>
-          </article>
-
-          <article class="training-card reveal">
-            <span class="num">02</span>
-            <div class="kicker">ALTERNATE SATURDAY</div>
-            <h3>EVENING SESSION</h3>
-            <div class="time">18:30 <span>→</span> 20:30</div>
-            <p>Two-hour MMA training session.</p>
-          </article>
-        </div>
-
-        <div class="training-membership-shared">
-          <span>MONTHLY MEMBERSHIP</span>
-          <strong>R200 p/m</strong>
-          <small>Includes both Saturday session formats</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">INSIDE THE CLUB</div>
-            <h2>FIGHT NIGHT <span>& TEAM.</span></h2>
-          </div>
-          <p>Real Hopefield MMA competition and team photography.</p>
-        </div>
-
-        <div class="gallery">
-          <figure class="g1 reveal"><img src="assets/first-fight-team.jpeg" alt="Hopefield MMA fighters together at an event"></figure>
-          <figure class="g2 reveal"><img src="assets/damien-action-1.jpeg" alt="Hopefield MMA competition action"></figure>
-          <figure class="g3 reveal"><img src="assets/damien-action-3.jpeg" alt="Hopefield MMA fight action"></figure>
-          <figure class="g4 reveal"><img src="assets/team-podium.jpeg" alt="Hopefield MMA team at competition"></figure>
-          <figure class="g5 reveal"><img src="assets/grappling-action.jpeg" alt="MMA grappling action"></figure>
-          <figure class="g6 reveal"><img src="assets/damien-press.jpeg" alt="Damien Erasmus at a combat sports media event"></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <div class="kicker">GET IN TOUCH</div>
-          <h2>READY TO <span>START?</span></h2>
-          <p>
-            Contact Hopefield MMA for the latest information on joining,
-            training sessions and competition opportunities.
-          </p>
-
-          <div class="contact-details">
-            <a href="tel:+27828672395"><small>PHONE / WHATSAPP</small><b>082 867 2395</b></a>
-            <a href="mailto:erasmusj468@gmail.com"><small>EMAIL</small><b>erasmusj468@gmail.com</b></a>
-            <div><small>LOCATION</small><b>Hopefield, Western Cape</b></div>
-          </div>
-
-          <div class="hero-buttons">
-            <a class="btn primary" href="https://wa.me/27828672395" target="_blank" rel="noopener">WHATSAPP US</a>
-            <a class="btn outline" href="tel:+27828672395">CALL</a>
-          </div>
-        </div>
-
-        <form id="contactForm" class="contact-form reveal">
-          <label>Name<input id="name" name="name" required></label>
-          <label>Phone or Email<input id="reply" name="reply" required></label>
-          <label>Message<textarea id="message" name="message" rows="6" required></textarea></label>
-          <button class="btn primary" type="submit">SEND ENQUIRY</button>
-          <p id="formStatus" class="form-status"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.jpeg" alt="">
-        <div><b>HOPEFIELD MMA</b><span>Train • Compete • Represent</span></div>
-      </div>
-      <div>© 2026 Hopefield MMA Club</div>
-      <a href="#home">BACK TO TOP ↑</a>
-    </div>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+</body></html>

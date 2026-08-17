@@ -1,29 +1,25 @@
-HOPEFIELD MMA — PROFESSIONAL JAVASCRIPT PATCH
+HOPEFIELD MMA — PROFESSIONAL MULTI-PAGE BUILD
 
-Replace ONLY script.js in the root of your GitHub repository.
+PAGES
+- index.html — Home
+- team.html — Coach + fighters
+- achievements.html — Nationals results
+- training.html — Schedule + pricing
+- gallery.html — Full gallery
+- contact.html — Contact/enquiry
 
-This patch intentionally does NOT change:
-- fighter names, records, weight classes, bios or Instagram URLs
-- coach information
-- training days or times
-- R200 p/m shared membership
-- page wording
-- photos
-- hero background
-- existing visual design
+PRICING INCLUDED
+- Monthly membership: R200 p/m
+- Private session: R200 per session
+- Group session: R50 per session
 
-Enhancements added:
-- active navigation highlighting while scrolling
-- accurate smooth scrolling under the fixed header
-- improved mobile menu behavior (Escape + click-outside)
-- thin gold scroll progress indicator
-- subtle header shadow after scrolling
-- back-to-top button
-- fullscreen gallery lightbox
-- keyboard gallery controls (Esc / left / right)
-- lazy loading and async image decoding
-- accessibility improvements
-- reduced-motion support
-- existing coach training details preserved
+IMPORTANT
+Upload the CONTENTS of this folder to the root of your existing GitHub repository, replacing the website files. Keep the included assets folder. Vercel should redeploy automatically after the GitHub commit.
 
-Python is not required for the live website because the current site is static and hosted on Vercel.
+Python is not required on the live site. This build uses static HTML/CSS/JavaScript so it remains fast and simple on Vercel.
+
+FIGHTER UPDATES
+Edit fighter records, bios, weights and Instagram URLs in data.js.
+
+VERCEL
+- vercel.json enables clean URLs, so Vercel can show /team, /training, /gallery etc. instead of .html in the address bar.

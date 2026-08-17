@@ -1,18 +1,13 @@
-/*
-  HOPEFIELD MMA — EASY EDIT DATA FILE
-
-  Edit fighter details here.
-  image_position and image_scale only affect cropping on the website.
-*/
-
 const FIGHTERS = [
   {
     id: "jonathan-erasmus",
     name: 'Jonathan "The Wolf" Erasmus',
+    short_name: "Jonathan Erasmus",
     status: "Competitor",
+    category: "competitor",
     image: "assets/jonathan.jpeg",
     image_position: "center 18%",
-    image_scale: 1.12,
+    image_scale: 1.08,
     weight_class: "Featherweight",
     mma_record: "3-5-0",
     instagram_url: "https://www.instagram.com/erasmus9563?igsh=MTVnNXpraXp1M2M1cA==",
@@ -21,37 +16,43 @@ const FIGHTERS = [
   },
   {
     id: "damien-erasmus",
-    name: 'Damiën "The Italian Stallion" Erasmus',
+    name: 'Damien "The Italian Stallion" Erasmus',
+    short_name: "Damien Erasmus",
     status: "Competitor",
+    category: "competitor",
     image: "assets/damien.jpeg",
-    image_position: "center 14%",
-    image_scale: 1.08,
+    image_position: "center 18%",
+    image_scale: 1.03,
     weight_class: "Featherweight",
     mma_record: "2-7-0",
     instagram_url: "https://www.instagram.com/damienerasmus17?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     achievement: "Silver Medallist — 2025 SA MMA Nationals",
-    bio: 'Damiën "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-7-0 record, highlighted by a first-round KO that helped secure a silver medal at the 2025 Nationals. He also battled through five rounds in a championship title fight.'
+    bio: 'Damien "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-7-0 record, highlighted by a first-round KO that helped secure a silver medal at the 2025 Nationals. He also showcased serious grit by battling through five rounds in a championship title fight.'
   },
   {
     id: "austin-armstrong",
     name: "Austin Armstrong",
+    short_name: "Austin Armstrong",
     status: "Competitor",
-    image: "austin.jpeg",
-    image_position: "center 18%",
-    image_scale: 1.06,
+    category: "competitor",
+    image: "assets/austin.jpeg",
+    image_position: "center 15%",
+    image_scale: 1.03,
     weight_class: "Bantamweight",
     mma_record: "0-2-0",
     instagram_url: "",
-    achievement: "Previous Hopefield MMA competitor",
+    achievement: "Hopefield MMA competitor",
     bio: "Hopefield MMA competitor."
   },
   {
     id: "burger-geldenhuys",
     name: "Burger Geldenhuys",
+    short_name: "Burger Geldenhuys",
     status: "Former competitor",
+    category: "former",
     image: "assets/burger.jpeg",
-    image_position: "center 14%",
-    image_scale: 1.14,
+    image_position: "center 16%",
+    image_scale: 1.08,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
@@ -61,10 +62,12 @@ const FIGHTERS = [
   {
     id: "seryn-armstrong",
     name: "Seryn Armstrong",
+    short_name: "Seryn Armstrong",
     status: "Former competitor",
+    category: "former",
     image: "assets/seryn.jpeg",
-    image_position: "center 22%",
-    image_scale: 1.08,
+    image_position: "center 18%",
+    image_scale: 1.03,
     weight_class: "",
     mma_record: "1-0-0",
     instagram_url: "",
@@ -74,10 +77,12 @@ const FIGHTERS = [
   {
     id: "shamiel-sierbritz",
     name: "Shamiel Sierbritz",
+    short_name: "Shamiel Sierbritz",
     status: "Future competitor",
-    image: "assets/samil.jpeg",
-    image_position: "center 15%",
-    image_scale: 1.08,
+    category: "future",
+    image: "assets/shamiel.jpeg",
+    image_position: "center 16%",
+    image_scale: 1.03,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
@@ -87,14 +92,27 @@ const FIGHTERS = [
   {
     id: "juande-jansen",
     name: "Juande Jansen",
+    short_name: "Juande Jansen",
     status: "Future competitor",
+    category: "future",
     image: "assets/juande.jpeg",
     image_position: "center 16%",
-    image_scale: 1.08,
+    image_scale: 1.03,
     weight_class: "",
     mma_record: "",
     instagram_url: "",
     achievement: "Preparing for future competition",
     bio: "Hopefield MMA athlete preparing for future competition."
   }
+];
+
+const GALLERY = [
+  {src:"assets/team-event.jpeg", alt:"Hopefield MMA team at competition"},
+  {src:"assets/action-1.jpeg", alt:"Hopefield MMA competition action"},
+  {src:"assets/action-2.jpeg", alt:"Hopefield MMA fight action"},
+  {src:"assets/team-podium.jpeg", alt:"Hopefield MMA team at an event"},
+  {src:"assets/grappling.jpeg", alt:"MMA grappling action"},
+  {src:"assets/press.jpeg", alt:"Combat sports media event"},
+  {src:"assets/team-prep.jpeg", alt:"Hopefield MMA team preparation"},
+  {src:"assets/fight-action.jpeg", alt:"Hopefield MMA cage action"}
 ];
