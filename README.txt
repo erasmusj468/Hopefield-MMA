@@ -1,25 +1,10 @@
-HOPEFIELD MMA — PROFESSIONAL MULTI-PAGE BUILD
+HOPEFIELD MMA — TEAM + GALLERY FIX
 
-PAGES
-- index.html — Home
-- team.html — Coach + fighters
-- achievements.html — Nationals results
-- training.html — Schedule + pricing
-- gallery.html — Full gallery
-- contact.html — Contact/enquiry
+Upload/replace data.js and team.html in the repository root.
+Then upload the CONTENTS of this patch's assets folder into your existing GitHub assets folder.
 
-PRICING INCLUDED
-- Monthly membership: R200 p/m
-- Private session: R200 per session
-- Group session: R50 per session
-
-IMPORTANT
-Upload the CONTENTS of this folder to the root of your existing GitHub repository, replacing the website files. Keep the included assets folder. Vercel should redeploy automatically after the GitHub commit.
-
-Python is not required on the live site. This build uses static HTML/CSS/JavaScript so it remains fast and simple on Vercel.
-
-FIGHTER UPDATES
-Edit fighter records, bios, weights and Instagram URLs in data.js.
-
-VERCEL
-- vercel.json enables clean URLs, so Vercel can show /team, /training, /gallery etc. instead of .html in the address bar.
+Changes:
+- Team page remains profile-only; no action/event gallery section is added there.
+- All fighter/coach profile images use new profile-* filenames to avoid broken/stale paths.
+- Gallery includes all action/event/team photos, including action-3.
+- Gallery image files are included so broken/missing gallery assets can be restored.
