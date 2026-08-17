@@ -1,10 +1,10 @@
-HOPEFIELD MMA — PHOTO RECOVERY PATCH
+HOPEFIELD MMA PHOTO PATH FIX
 
-Upload these items to the same locations in your GitHub repository:
-- app.js -> repository root
-- data.js -> repository root
-- style.css -> repository root
-- team.html -> repository root
-- contents of assets/ -> existing assets/ folder
+This patch uses the image files that are already in the ROOT of the GitHub repository.
+No assets-folder upload is required.
 
-This patch restores the profile/gallery image paths and keeps the mobile polish.
+Replace only:
+- data.js
+- team.html
+
+It keeps the existing multi-page design, mobile polish, fighter data, coach details and gallery behavior.
