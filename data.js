@@ -1,7 +1,7 @@
 const FIGHTERS = [
   {
     id: "jonathan-erasmus",
-    name: 'Jonathan "The Wolf" Erasmus',
+    name: 'Jonathan "The Italian Assassin" Erasmus',
     short_name: "Jonathan Erasmus",
     status: "Competitor",
     category: "competitor",
@@ -12,7 +12,7 @@ const FIGHTERS = [
     mma_record: "3-5-0",
     instagram_url: "https://www.instagram.com/erasmus9563?igsh=MTVnNXpraXp1M2M1cA==",
     achievement: "Bronze Medallist — 2025 SA MMA Nationals",
-    bio: 'Jonathan "The Wolf" Erasmus is a fierce featherweight contender stepping into the cage with a 3-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals.'
+    bio: 'Jonathan "The Italian Assassin" Erasmus is a fierce featherweight contender stepping into the cage with a 3-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals.'
   },
   {
     id: "damien-erasmus",

@@ -1,3 +1,12 @@
+// Hopefield MMA visual polish layer. Loaded after the existing stylesheet so current colours/content remain intact.
+if (!document.querySelector('link[data-hopefield-polish]')) {
+  const polish = document.createElement("link");
+  polish.rel = "stylesheet";
+  polish.href = "polish.css";
+  polish.dataset.hopefieldPolish = "true";
+  document.head.appendChild(polish);
+}
+
 document.documentElement.classList.add("js");
 
 const page = document.body.dataset.page;

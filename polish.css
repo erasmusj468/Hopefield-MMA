@@ -1,0 +1,302 @@
+
+/* ============================================================
+   HOPEFIELD MMA — PRISTINE POLISH LAYER
+   This file intentionally sits on top of style.css.
+   It keeps the existing black/gold identity and all content.
+   ============================================================ */
+
+:root{
+  --hf-radius:4px;
+  --hf-shadow:0 22px 70px rgba(0,0,0,.28);
+  --hf-soft-line:rgba(224,183,102,.14);
+  --hf-panel:linear-gradient(145deg,rgba(24,24,27,.96),rgba(11,11,13,.98));
+}
+
+::selection{background:var(--gold2);color:#070708}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:4px}
+body{
+  background:
+    radial-gradient(circle at 12% 4%,rgba(197,144,61,.045),transparent 26rem),
+    radial-gradient(circle at 88% 52%,rgba(224,183,102,.025),transparent 32rem),
+    var(--bg);
+}
+main{min-height:70vh}
+.container{width:min(var(--max),calc(100% - 48px))}
+.section{position:relative;padding:88px 0}
+.section.alt{background:linear-gradient(180deg,#0d0d0f 0%,#0b0b0d 100%)}
+.section + .section{border-top:1px solid rgba(255,255,255,.025)}
+.section-head{margin-bottom:36px}
+.section-head h2{max-width:760px}
+.section-head p{line-height:1.75}
+.eyebrow{letter-spacing:.2em}
+.gold{text-shadow:0 0 28px rgba(224,183,102,.08)}
+
+.site-header{
+  border-bottom:1px solid rgba(224,183,102,.08);
+  box-shadow:0 1px 0 rgba(255,255,255,.015);
+}
+.brand img{box-shadow:0 0 0 3px rgba(224,183,102,.035)}
+.main-nav{gap:28px}
+.nav-cta,.btn,.filter-btn{border-radius:var(--hf-radius)}
+.btn{font-weight:800}
+
+.page-hero{
+  padding-top:calc(var(--header) + 72px);
+  padding-bottom:68px;
+  background:
+    linear-gradient(90deg,rgba(7,7,8,.98),rgba(7,7,8,.88)),
+    radial-gradient(circle at 78% 35%,rgba(197,144,61,.18),transparent 31rem),
+    #09090a;
+}
+.page-hero .container{max-width:1040px;margin-left:auto;margin-right:auto}
+.page-hero h1{max-width:920px}
+.page-hero p{line-height:1.8}
+
+.quick-card,
+.coach-feature,
+.fighter-card,
+.medal-card,
+.session-card,
+.pricing-panel,
+.price-card,
+.discipline,
+.contact-form{
+  border-radius:var(--hf-radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.15);
+}
+
+.quick-grid{gap:14px}
+.quick-card{
+  border-color:rgba(255,255,255,.07);
+  background:var(--hf-panel);
+}
+.quick-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--hf-shadow);
+}
+
+.coach-feature{
+  border-color:rgba(224,183,102,.18);
+  box-shadow:var(--hf-shadow);
+}
+.coach-photo{height:590px}
+.coach-copy{padding:48px}
+.coach-copy>p{line-height:1.8}
+.coach-skills{gap:10px}
+.skill{
+  border-radius:var(--hf-radius);
+  border-color:rgba(255,255,255,.075);
+  background:rgba(8,8,9,.72);
+}
+.skill span{line-height:1.55}
+
+/* Detailed coach profile */
+.coach-profile-detail{
+  margin-top:28px;
+  padding:38px;
+  border:1px solid rgba(224,183,102,.16);
+  border-radius:var(--hf-radius);
+  background:
+    linear-gradient(145deg,rgba(18,18,21,.98),rgba(8,8,10,.99));
+  box-shadow:var(--hf-shadow);
+}
+.coach-profile-header{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);
+  gap:44px;
+  align-items:end;
+  padding-bottom:30px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.coach-profile-header h2{font-size:clamp(36px,4.7vw,58px)}
+.coach-profile-lead{
+  color:#b5afa5;
+  font-size:14px;
+  line-height:1.9;
+  max-width:620px;
+}
+.coach-profile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:24px;
+}
+.coach-profile-card{
+  position:relative;
+  min-height:250px;
+  padding:26px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:var(--hf-radius);
+  background:linear-gradient(160deg,rgba(19,19,22,.98),rgba(9,9,11,.98));
+  overflow:hidden;
+}
+.coach-profile-card-wide{grid-column:1/-1;min-height:auto}
+.coach-profile-card .profile-num{
+  position:absolute;
+  top:4px;
+  right:16px;
+  font-family:Oswald,Impact,sans-serif;
+  font-size:72px;
+  line-height:1;
+  color:rgba(255,255,255,.025);
+  pointer-events:none;
+}
+.coach-profile-card h3{
+  position:relative;
+  margin:6px 0 12px;
+  font-size:25px;
+}
+.coach-profile-card p{
+  position:relative;
+  color:#9f9a91;
+  font-size:12px;
+  line-height:1.8;
+  max-width:880px;
+}
+.mma-chain{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 11px;
+  margin-top:22px;
+  padding:15px 16px;
+  border-top:1px solid rgba(224,183,102,.16);
+  border-bottom:1px solid rgba(224,183,102,.16);
+  background:rgba(197,144,61,.035);
+}
+.mma-chain span{
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#d9d3c9;
+}
+.mma-chain b{color:var(--gold2);font-weight:500}
+
+.coach-philosophy{
+  display:grid;
+  grid-template-columns:minmax(240px,.9fr) minmax(360px,1.4fr);
+  gap:22px 34px;
+  align-items:center;
+  margin-top:12px;
+  padding:28px;
+  border:1px solid rgba(224,183,102,.22);
+  background:linear-gradient(105deg,rgba(45,32,13,.5),rgba(10,10,12,.9));
+}
+.coach-philosophy blockquote{
+  font-family:Oswald,Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(26px,3vw,38px);
+  line-height:1.1;
+  color:#f3eee5;
+}
+.coach-philosophy>p{
+  grid-column:1/-1;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.07);
+  color:#8f8a82;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+}
+.philosophy-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.philosophy-pills span{
+  padding:8px 10px;
+  border:1px solid rgba(224,183,102,.25);
+  background:rgba(8,8,9,.7);
+  color:#cfc8bd;
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* Cleaner roster presentation without changing any data or images */
+.fighter-controls{margin-bottom:18px}
+.fighter-grid,.featured-fighters{gap:14px}
+.fighter-card{
+  border-color:rgba(255,255,255,.075);
+  background:var(--hf-panel);
+}
+.fighter-card:hover{box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.fighter-body{padding:18px}
+.fighter-body h3{letter-spacing:.01em}
+.chip{border-radius:2px;background:rgba(255,255,255,.018)}
+.fighter-body p{line-height:1.72}
+
+/* Achievements */
+.medal-grid{gap:14px}
+.medal-card{border-color:rgba(224,183,102,.14)}
+.medal-copy{min-height:130px}
+
+/* Training */
+.schedule-grid{gap:14px}
+.session-card{border-color:rgba(255,255,255,.075)}
+.pricing-panel{border-color:rgba(224,183,102,.22)}
+.pricing-grid{gap:8px}
+.price-card{border-color:rgba(255,255,255,.075)}
+.discipline-grid{gap:10px}
+
+/* Contact */
+.contact-grid{align-items:start}
+.contact-form{border-color:rgba(224,183,102,.14)}
+.contact-item{transition:.2s}
+a.contact-item:hover{padding-left:8px;color:#fff}
+
+/* Gallery visuals stay exactly as controlled by style.css; only frame polish */
+.gallery-item{box-shadow:0 9px 26px rgba(0,0,0,.2)}
+
+/* Footer */
+.site-footer{border-top-color:rgba(224,183,102,.10)}
+.footer-grid{min-height:56px}
+
+/* Responsive precision */
+@media(max-width:900px){
+  .container{width:min(var(--max),calc(100% - 32px))}
+  .section{padding:70px 0}
+  .coach-profile-detail{padding:26px}
+  .coach-profile-header{grid-template-columns:1fr;gap:14px;align-items:start}
+  .coach-profile-lead{max-width:760px}
+  .coach-philosophy{grid-template-columns:1fr}
+  .philosophy-pills{justify-content:flex-start}
+  .coach-philosophy>p{grid-column:auto}
+}
+
+@media(max-width:620px){
+  .container{width:calc(100% - 24px)}
+  .section{padding:52px 0}
+  .page-hero{padding-top:calc(var(--header) + 46px);padding-bottom:46px}
+  .page-hero h1{font-size:clamp(43px,15vw,62px)}
+  .page-hero p{font-size:13px}
+  .section-head{margin-bottom:24px}
+  .section-head p{font-size:12px}
+  .coach-copy{padding:20px}
+  .coach-profile-detail{margin-top:14px;padding:16px}
+  .coach-profile-header{padding-bottom:20px}
+  .coach-profile-header h2{font-size:34px}
+  .coach-profile-lead{font-size:12px;line-height:1.75}
+  .coach-profile-grid{grid-template-columns:1fr;gap:8px;margin-top:14px}
+  .coach-profile-card,
+  .coach-profile-card-wide{
+    grid-column:auto;
+    min-height:auto;
+    padding:18px;
+  }
+  .coach-profile-card .profile-num{font-size:52px}
+  .coach-profile-card h3{font-size:21px}
+  .coach-profile-card p{font-size:11px}
+  .mma-chain{justify-content:flex-start;padding:12px;gap:6px 8px}
+  .mma-chain span{font-size:7px}
+  .coach-philosophy{padding:18px;margin-top:8px;gap:16px}
+  .coach-philosophy blockquote{font-size:27px}
+  .philosophy-pills{gap:5px}
+  .philosophy-pills span{font-size:7px;padding:6px 7px}
+  .quick-card,.session-card,.pricing-panel,.contact-form{box-shadow:none}
+  .fighter-card{box-shadow:none}
+  .footer-grid{align-items:start}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
