@@ -91,8 +91,8 @@ const FIGHTERS = [
   },
   {
     id: "juande-jansen",
-    name: "Juande Jansen",
-    short_name: "Juande Jansen",
+    name: "Juande \"Havoc\" Jansen",
+    short_name: "Juande Havoc Jansen",
     status: "Future competitor",
     category: "future",
     image: "juande.jpeg",
