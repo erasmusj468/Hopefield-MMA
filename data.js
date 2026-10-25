@@ -9,10 +9,10 @@ const FIGHTERS = [
     image_position: "center 18%",
     image_scale: 1.08,
     weight_class: "Featherweight",
-    mma_record: "3-5-0",
+    mma_record: "4-5-0",
     instagram_url: "https://www.instagram.com/erasmus9563?igsh=MTVnNXpraXp1M2M1cA==",
     achievement: "Bronze Medallist — 2025 SA MMA Nationals",
-    bio: 'Jonathan "The Italian Assassin" Erasmus is a fierce featherweight contender stepping into the cage with a 3-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals.'
+    bio: 'Jonathan "The Italian Assassin" Erasmus is a fierce featherweight contender stepping into the cage with a 4-5-0 record. He proved his high-level skills on the big stage by battling his way to a strong third-place finish to secure bronze at the 2025 Nationals.'
   },
   {
     id: "damien-erasmus",
@@ -24,10 +24,10 @@ const FIGHTERS = [
     image_position: "center 18%",
     image_scale: 1.03,
     weight_class: "Featherweight",
-    mma_record: "2-7-0",
+    mma_record: "2-8-0",
     instagram_url: "https://www.instagram.com/damienerasmus17?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     achievement: "Silver Medallist — 2025 SA MMA Nationals",
-    bio: 'Damien "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-7-0 record, highlighted by a first-round KO that helped secure a silver medal at the 2025 Nationals. He also showcased serious grit by battling through five rounds in a championship title fight.'
+    bio: 'Damien "The Italian Stallion" Erasmus is the number-one ranked featherweight with a 2-8-0 record, highlighted by a first-round KO that helped secure a silver medal at the 2025 Nationals. He also showcased serious grit by battling through five rounds in a championship title fight.'
   },
   {
     id: "austin-armstrong",

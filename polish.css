@@ -300,3 +300,85 @@ a.contact-item:hover{padding-left:8px;color:#fff}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
+
+
+/* MOBILE BOTTOM NAVIGATION — HIGH VISIBILITY
+   Clear labels, familiar icons and comfortable tap targets while retaining the black/gold style. */
+.mobile-page-nav{display:none}
+.mobile-nav-icon{
+  display:block;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+@media(max-width:620px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  .mobile-page-nav{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1800;
+    height:calc(68px + env(safe-area-inset-bottom));
+    padding:5px 4px calc(5px + env(safe-area-inset-bottom));
+    box-sizing:border-box;
+    background:rgba(8,8,9,.97);
+    border-top:1px solid rgba(224,183,102,.25);
+    box-shadow:0 -12px 36px rgba(0,0,0,.48);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+  .mobile-page-nav a{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    min-width:0;
+    min-height:44px;
+    padding:5px 1px;
+    border:1px solid transparent;
+    border-radius:9px;
+    color:#a7a095;
+    font-size:clamp(8px,2.25vw,10px);
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.025em;
+    text-align:center;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+    -webkit-tap-highlight-color:transparent;
+    transition:color .18s ease,background .18s ease,border-color .18s ease,transform .18s ease;
+  }
+  .mobile-page-nav a.active{
+    color:var(--gold2);
+    background:linear-gradient(180deg,rgba(224,183,102,.15),rgba(224,183,102,.045));
+    border-color:rgba(224,183,102,.22);
+  }
+  .mobile-page-nav a.active::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:50%;
+    width:20px;
+    height:2px;
+    border-radius:0 0 3px 3px;
+    background:var(--gold2);
+    transform:translateX(-50%);
+  }
+  .mobile-page-nav a:active{transform:scale(.97)}
+  .mobile-page-nav a:focus-visible{outline:2px solid var(--gold2);outline-offset:-3px}
+  .mobile-page-nav a.active .mobile-nav-icon{color:var(--gold2)}
+  .mobile-page-nav span{display:block;max-width:100%;overflow:hidden;text-overflow:clip}
+  .whatsapp-float{right:14px;bottom:calc(82px + env(safe-area-inset-bottom))}
+  .back-top{right:17px;bottom:calc(138px + env(safe-area-inset-bottom))}
+}

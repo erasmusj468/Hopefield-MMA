@@ -20,15 +20,35 @@ const mobileNav=document.createElement("nav");
 mobileNav.className="mobile-page-nav";
 mobileNav.setAttribute("aria-label","Mobile page navigation");
 mobileNav.innerHTML=`
-  <a data-mobile-page="home" href="index.html"><span>Home</span></a>
-  <a data-mobile-page="team" href="team.html"><span>Team</span></a>
-  <a data-mobile-page="achievements" href="achievements.html"><span>Awards</span></a>
-  <a data-mobile-page="training" href="training.html"><span>Training</span></a>
-  <a data-mobile-page="gallery" href="gallery.html"><span>Gallery</span></a>
-  <a data-mobile-page="contact" href="contact.html"><span>Contact</span></a>`;
+  <a data-mobile-page="home" href="index.html" aria-label="Home">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h14V9"></path><path d="M9 21v-7h6v7"></path></svg>
+    <span>Home</span>
+  </a>
+  <a data-mobile-page="team" href="team.html" aria-label="Team">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <span>Team</span>
+  </a>
+  <a data-mobile-page="achievements" href="achievements.html" aria-label="Awards">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v2a4 4 0 0 0 4 4"></path><path d="M17 6h3v2a4 4 0 0 1-4 4"></path></svg>
+    <span>Awards</span>
+  </a>
+  <a data-mobile-page="training" href="training.html" aria-label="Training">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9v6"></path><path d="M18 9v6"></path><path d="M3 10v4"></path><path d="M21 10v4"></path><path d="M6 12h12"></path><path d="M3 11h3"></path><path d="M18 11h3"></path></svg>
+    <span>Training</span>
+  </a>
+  <a data-mobile-page="gallery" href="gallery.html" aria-label="Gallery">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8.5" cy="9" r="1.5"></circle><path d="m21 15-5-5L5 20"></path></svg>
+    <span>Gallery</span>
+  </a>
+  <a data-mobile-page="contact" href="contact.html" aria-label="Contact">
+    <svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.8A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+    <span>Contact</span>
+  </a>
+`;
 document.body.appendChild(mobileNav);
-mobileNav.querySelector(`[data-mobile-page="${page}"]`)?.classList.add("active");
-
+const activeMobileLink = mobileNav.querySelector('[data-mobile-page="' + page + '"]');
+activeMobileLink?.classList.add("active");
+activeMobileLink?.setAttribute("aria-current", "page");
 const header = document.getElementById("siteHeader");
 const progress = document.getElementById("scrollProgress");
 const backTop = document.getElementById("backTop");
