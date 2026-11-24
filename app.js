@@ -196,16 +196,81 @@ form?.addEventListener("submit",e=>{
 });
 
 
-// Reviews are emailed to the club for manual moderation; they are never published automatically.
+// Public reviews are stored in Neon Postgres. Email addresses never leave the server.
 const reviewForm=document.getElementById("reviewForm");
-reviewForm?.addEventListener("submit",e=>{
+const reviewList=document.getElementById("publishedReviews");
+const reviewAverage=document.getElementById("reviewAverage");
+const reviewAverageStars=document.getElementById("reviewAverageStars");
+const reviewCount=document.getElementById("reviewCount");
+const reviewNote=document.getElementById("reviewFormNote");
+const reviewSubmit=document.getElementById("reviewSubmit");
+
+function renderReviews(data){
+  if(!reviewList)return;
+  const summary=data?.summary||{count:0,average:0};
+  const count=Number(summary.count)||0;
+  const average=Number(summary.average)||0;
+  if(reviewAverage)reviewAverage.textContent=count?average.toFixed(1):"—";
+  if(reviewAverageStars){
+    const rounded=Math.round(average);
+    reviewAverageStars.textContent="★".repeat(rounded)+"☆".repeat(5-rounded);
+    reviewAverageStars.setAttribute("aria-label",count?average.toFixed(1)+" out of 5 stars":"No ratings yet");
+  }
+  if(reviewCount)reviewCount.textContent=count+(count===1?" published review":" published reviews");
+  reviewList.replaceChildren();
+  if(!Array.isArray(data?.reviews)||!data.reviews.length){
+    const empty=document.createElement("p");empty.className="reviews-empty";empty.textContent="No reviews yet. Be the first to share your experience.";reviewList.appendChild(empty);return;
+  }
+  data.reviews.forEach(item=>{
+    const card=document.createElement("article");card.className="published-review";
+    const header=document.createElement("div");header.className="published-review-header";
+    const author=document.createElement("strong");author.textContent=item.name;
+    const stars=document.createElement("span");stars.className="published-review-stars";stars.textContent="★".repeat(Number(item.rating))+"☆".repeat(5-Number(item.rating));stars.setAttribute("aria-label",item.rating+" out of 5 stars");
+    const date=document.createElement("time");date.className="published-review-date";
+    const parsed=new Date(item.created_at);date.dateTime=parsed.toISOString();date.textContent=parsed.toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+    const content=document.createElement("p");content.textContent=item.review;
+    header.append(author,stars);card.append(header,content,date);reviewList.appendChild(card);
+  });
+}
+async function loadReviews(){
+  if(!reviewList)return;
+  try{
+    const response=await fetch("/api/reviews",{headers:{"Accept":"application/json"}});
+    if(!response.ok)throw new Error("Could not load reviews");
+    renderReviews(await response.json());
+  }catch(error){
+    reviewList.replaceChildren();
+    const message=document.createElement("p");message.className="reviews-empty";message.textContent="Reviews are temporarily unavailable. Please try again later.";reviewList.appendChild(message);
+    if(reviewCount)reviewCount.textContent="Unable to load ratings";
+  }
+}
+reviewForm?.addEventListener("submit",async e=>{
   e.preventDefault();
   const name=document.getElementById("reviewName").value.trim();
-  const rating=reviewForm.querySelector('input[name="rating"]:checked')?.value;
+  const email=document.getElementById("reviewEmail").value.trim();
+  const rating=Number(reviewForm.querySelector('input[name="rating"]:checked')?.value);
   const review=document.getElementById("reviewText").value.trim();
-  const consent=document.getElementById("reviewConsent")?.checked;
-  if(!name||!rating||!review||!consent)return;
-  const subject=encodeURIComponent("Hopefield MMA website review — "+rating+"/5 stars");
-  const body=encodeURIComponent("New website review for manual approval\\n\\nName: "+name+"\\nRating: "+rating+"/5 stars\\n\\nReview:\\n"+review+"\\n\\nPlease check this review before publishing it.");
-  window.location.href="mailto:erasmusj468@gmail.com?subject="+subject+"&body="+body;
+  const verificationConsent=document.getElementById("reviewConsent").checked;
+  const agePermissionConfirmed=document.getElementById("reviewAgeConsent").checked;
+  const website=document.getElementById("reviewWebsite").value;
+  if(!name||!email||!rating||!review||!verificationConsent||!agePermissionConfirmed)return;
+  if(reviewSubmit)reviewSubmit.disabled=true;
+  if(reviewNote)reviewNote.textContent="Publishing your review…";
+  try{
+    const response=await fetch("/api/reviews",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({name,email,rating,review,verificationConsent,agePermissionConfirmed,website})
+    });
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||"Your review could not be published.");
+    reviewForm.reset();
+    if(reviewNote)reviewNote.textContent="Thanks! Your review has been published.";
+    await loadReviews();
+  }catch(error){
+    if(reviewNote)reviewNote.textContent=error.message||"Something went wrong. Please try again.";
+  }finally{
+    if(reviewSubmit)reviewSubmit.disabled=false;
+  }
 });
+loadReviews();
