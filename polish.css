@@ -382,3 +382,23 @@ a.contact-item:hover{padding-left:8px;color:#fff}
   .whatsapp-float{right:14px;bottom:calc(82px + env(safe-area-inset-bottom))}
   .back-top{right:17px;bottom:calc(138px + env(safe-area-inset-bottom))}
 }
+
+/* Accessibility and legal-page finishing touches */
+.skip-link{position:fixed;top:10px;left:10px;z-index:3000;transform:translateY(-160%);padding:12px 16px;background:var(--gold2);color:#080808;font-weight:800;border:2px solid #080808}
+.skip-link:focus{transform:translateY(0)}
+.footer-legal{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:8px}
+.footer-legal a{color:#aaa49c;text-decoration:underline;text-underline-offset:3px}
+.footer-legal a:hover,.footer-legal a:focus-visible{color:var(--gold2)}
+.contact-form .consent-check{display:flex;align-items:flex-start;gap:10px;margin:14px 0;color:#aaa49c;font-size:12px;line-height:1.65;text-transform:none;letter-spacing:0}
+.contact-form .consent-check input{display:block;flex:0 0 18px;width:18px;height:18px;margin:3px 0 0;padding:0;accent-color:var(--gold2)}
+.contact-form .consent-check a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
+.policy-copy{max-width:900px;margin:0 auto}
+.policy-copy h2{font-size:clamp(24px,3vw,34px);line-height:1.15;margin:34px 0 12px}
+.policy-copy p,.policy-copy li{color:#aaa49c;font-size:14px;line-height:1.85}
+.policy-copy ul{padding-left:22px;margin:10px 0 20px}
+.policy-copy li{margin:6px 0}
+.policy-copy a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
+.policy-copy .policy-note{margin:18px 0;padding:16px 18px;border:1px solid rgba(224,183,102,.25);background:rgba(224,183,102,.045);color:#d0c9bd;font-size:13px;line-height:1.7}
+.policy-meta{color:#aaa49c;font-size:12px;margin-bottom:24px}
+.trust-strip span,.price-card p,.footer-meta,.footer-contact,.page-hero .crumb,.form-note,.contact-form label,.skill span,.fighter-body p,.chip,.filter-btn,.price-label,.discipline p,.coach-profile-lead,.coach-profile-card p,.medal-copy p,.quick-card p{color:#aaa49c}
+@media(max-width:620px){.footer-legal{gap:8px 11px}.policy-copy p,.policy-copy li{font-size:13px}.policy-copy .policy-note{padding:13px}}
