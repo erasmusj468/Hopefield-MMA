@@ -194,3 +194,18 @@ form?.addEventListener("submit",e=>{
   const body=encodeURIComponent(`Name: ${name}\\nPhone / Email: ${reply}\\n\\n${message}`);
   window.location.href=`mailto:erasmusj468@gmail.com?subject=${subject}&body=${body}`;
 });
+
+
+// Reviews are emailed to the club for manual moderation; they are never published automatically.
+const reviewForm=document.getElementById("reviewForm");
+reviewForm?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("reviewName").value.trim();
+  const rating=reviewForm.querySelector('input[name="rating"]:checked')?.value;
+  const review=document.getElementById("reviewText").value.trim();
+  const consent=document.getElementById("reviewConsent")?.checked;
+  if(!name||!rating||!review||!consent)return;
+  const subject=encodeURIComponent("Hopefield MMA website review — "+rating+"/5 stars");
+  const body=encodeURIComponent("New website review for manual approval\\n\\nName: "+name+"\\nRating: "+rating+"/5 stars\\n\\nReview:\\n"+review+"\\n\\nPlease check this review before publishing it.");
+  window.location.href="mailto:erasmusj468@gmail.com?subject="+subject+"&body="+body;
+});
